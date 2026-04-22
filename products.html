@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - SHIVA SHANKAR G R</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌾 Jai Jawan Jai Kisan 🌾</h1>
+        <p>Digital Profile of an Indian Farmer</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="farm.html">My Farm</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="section">
+            <h1>Our Organic Products</h1>
+            <p class="lead">Fresh, certified organic produce directly from our farm to your doorstep. All products are 100% chemical-free, grown with sustainable practices, and harvested at peak freshness.</p>
+        </div>
+
+        <!-- Product Filters -->
+        <div class="section filter-section">
+            <h3>Filter by Category:</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('grains')">Grains & Pulses</button>
+                <button class="filter-btn" onclick="filterProducts('vegetables')">Vegetables</button>
+                <button class="filter-btn" onclick="filterProducts('fruits')">Fruits</button>
+                <button class="filter-btn" onclick="filterProducts('dairy')">Dairy & Oils</button>
+            </div>
+        </div>
+        <!-- Products Grid -->
+        <div class="section">
+    <div class="products-grid" id="products-container">
+        <p>Loading fresh produce...</p>
+    </div>
+</div>
+                
+                <!-- Product 1: Organic Wheat -->
+                <div class="product-detail-card" data-category="grains">
+                    <div class="product-image">🌾</div>
+                    <div class="product-info">
+                        <h3>Organic Wheat</h3>
+                        <p class="product-category">Grains & Pulses</p>
+                        <p class="product-description">Premium quality pesticide-free wheat from Rabi season. High in protein and fiber, perfect for rotis and bread.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ 100% Organic</span>
+                            <span class="feature-badge">✓ Non-GMO</span>
+                            <span class="feature-badge">✓ Fresh</span>
+                        </div>
+                        <p class="product-price">₹75 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="wheat-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('wheat-qty')">-</button>
+                                <input type="number" id="wheat-qty" value="1" min="1" max="100">
+                                <button class="qty-btn" onclick="increaseQty('wheat-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Organic Wheat', 35, 'wheat-qty', '🌾')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Tomatoes -->
+                <div class="product-detail-card" data-category="vegetables">
+                    <div class="product-image">🍅</div>
+                    <div class="product-info">
+                        <h3>Fresh Tomatoes</h3>
+                        <p class="product-category">Vegetables</p>
+                        <p class="product-description">Juicy, vine-ripened organic tomatoes. Drought-tolerant variety with exceptional taste and nutrition.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Vine Ripened</span>
+                            <span class="feature-badge">✓ High Lycopene</span>
+                            <span class="feature-badge">✓ No Pesticides</span>
+                        </div>
+                        <p class="product-price">₹40 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="tomato-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('tomato-qty')">-</button>
+                                <input type="number" id="tomato-qty" value="1" min="1" max="50">
+                                <button class="qty-btn" onclick="increaseQty('tomato-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Fresh Tomatoes', 40, 'tomato-qty', '🍅')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Chickpeas -->
+                <div class="product-detail-card" data-category="grains">
+                    <div class="product-image">🫘</div>
+                    <div class="product-info">
+                        <h3>Organic Chickpeas (Chana)</h3>
+                        <p class="product-category">Grains & Pulses</p>
+                        <p class="product-description">Premium desi chickpeas, protein-rich and perfect for traditional Indian dishes. Grown during Rabi season.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ High Protein</span>
+                            <span class="feature-badge">✓ Organic</span>
+                            <span class="feature-badge">✓ Desi Variety</span>
+                        </div>
+                        <p class="product-price">₹80 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="chickpea-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('chickpea-qty')">-</button>
+                                <input type="number" id="chickpea-qty" value="1" min="1" max="50">
+                                <button class="qty-btn" onclick="increaseQty('chickpea-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Organic Chickpeas', 80, 'chickpea-qty', '🫘')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Cauliflower -->
+                <div class="product-detail-card" data-category="vegetables">
+                    <div class="product-image">🥦</div>
+                    <div class="product-info">
+                        <h3>Organic Cauliflower</h3>
+                        <p class="product-category">Vegetables</p>
+                        <p class="product-description">Fresh, white organic cauliflower. Rich in vitamins and minerals, perfect for curries and stir-fries.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Fresh Daily</span>
+                            <span class="feature-badge">✓ Vitamin C</span>
+                            <span class="feature-badge">✓ Chemical Free</span>
+                        </div>
+                        <p class="product-price">₹50 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="cauliflower-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('cauliflower-qty')">-</button>
+                                <input type="number" id="cauliflower-qty" value="1" min="1" max="30">
+                                <button class="qty-btn" onclick="increaseQty('cauliflower-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Organic Cauliflower', 50, 'cauliflower-qty', '🥦')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Spinach -->
+                <div class="product-detail-card" data-category="vegetables">
+                    <div class="product-image">🥬</div>
+                    <div class="product-info">
+                        <h3>Fresh Spinach (Palak)</h3>
+                        <p class="product-category">Vegetables</p>
+                        <p class="product-description">Tender, dark green organic spinach leaves. Iron-rich and packed with nutrients.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Iron Rich</span>
+                            <span class="feature-badge">✓ Fresh Cut</span>
+                            <span class="feature-badge">✓ Organic</span>
+                        </div>
+                        <p class="product-price">₹25 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="spinach-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('spinach-qty')">-</button>
+                                <input type="number" id="spinach-qty" value="1" min="1" max="20">
+                                <button class="qty-btn" onclick="increaseQty('spinach-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Fresh Spinach', 25, 'spinach-qty', '🥬')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Okra -->
+                <div class="product-detail-card" data-category="vegetables">
+                    <div class="product-image">🫛</div>
+                    <div class="product-info">
+                        <h3>Organic Okra (Bhindi)</h3>
+                        <p class="product-category">Vegetables</p>
+                        <p class="product-description">Fresh, tender okra pods. Low-calorie and high in dietary fiber. Perfect for traditional Indian recipes.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ High Fiber</span>
+                            <span class="feature-badge">✓ Fresh</span>
+                            <span class="feature-badge">✓ Tender</span>
+                        </div>
+                        <p class="product-price">₹45 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="okra-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('okra-qty')">-</button>
+                                <input type="number" id="okra-qty" value="1" min="1" max="25">
+                                <button class="qty-btn" onclick="increaseQty('okra-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Organic Okra', 45, 'okra-qty', '🫛')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 7: Watermelon -->
+                <div class="product-detail-card" data-category="fruits">
+                    <div class="product-image">🍉</div>
+                    <div class="product-info">
+                        <h3>Fresh Watermelon</h3>
+                        <p class="product-category">Fruits</p>
+                        <p class="product-description">Sweet, juicy watermelon from Zaid season. Naturally grown, perfectly ripe, and refreshing.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Sugar Sweet</span>
+                            <span class="feature-badge">✓ Hydrating</span>
+                            <span class="feature-badge">✓ Fresh</span>
+                        </div>
+                        <p class="product-price">₹20 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="watermelon-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('watermelon-qty')">-</button>
+                                <input type="number" id="watermelon-qty" value="2" min="1" max="50">
+                                <button class="qty-btn" onclick="increaseQty('watermelon-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Fresh Watermelon', 20, 'watermelon-qty', '🍉')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 8: Cucumber -->
+                <div class="product-detail-card" data-category="vegetables">
+                    <div class="product-image">🥒</div>
+                    <div class="product-info">
+                        <h3>Organic Cucumber</h3>
+                        <p class="product-category">Vegetables</p>
+                        <p class="product-description">Crisp, fresh organic cucumbers. Perfect for salads, raita, and healthy snacking.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Crispy</span>
+                            <span class="feature-badge">✓ Low Calorie</span>
+                            <span class="feature-badge">✓ Fresh</span>
+                        </div>
+                        <p class="product-price">₹30 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="cucumber-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('cucumber-qty')">-</button>
+                                <input type="number" id="cucumber-qty" value="1" min="1" max="30">
+                                <button class="qty-btn" onclick="increaseQty('cucumber-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Organic Cucumber', 30, 'cucumber-qty', '🥒')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 9: Coriander -->
+                <div class="product-detail-card" data-category="vegetables">
+                    <div class="product-image">🌿</div>
+                    <div class="product-info">
+                        <h3>Fresh Coriander Leaves</h3>
+                        <p class="product-category">Vegetables</p>
+                        <p class="product-description">Aromatic, fresh organic coriander. Essential for Indian cooking, rich in antioxidants.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Aromatic</span>
+                            <span class="feature-badge">✓ Fresh Cut</span>
+                            <span class="feature-badge">✓ Organic</span>
+                        </div>
+                        <p class="product-price">₹40 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="coriander-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('coriander-qty')">-</button>
+                                <input type="number" id="coriander-qty" value="0.5" min="0.25" max="10" step="0.25">
+                                <button class="qty-btn" onclick="increaseQty('coriander-qty', 0.25)">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Fresh Coriander', 40, 'coriander-qty', '🌿')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 10: Mango -->
+                <div class="product-detail-card" data-category="fruits">
+                    <div class="product-image">🥭</div>
+                    <div class="product-info">
+                        <h3>Fresh Mangoes</h3>
+                        <p class="product-category">Fruits</p>
+                        <p class="product-description">Sweet, juicy organic mangoes. Seasonal favorite, rich in vitamins and natural sweetness. Perfect summer fruit!</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Seasonal</span>
+                            <span class="feature-badge">✓ Vitamin A</span>
+                            <span class="feature-badge">✓ Sweet</span>
+                        </div>
+                        <p class="product-price">₹60 <span>per kg</span></p>
+                        <div class="quantity-selector">
+                            <label for="mango-qty">Quantity (kg):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('mango-qty')">-</button>
+                                <input type="number" id="mango-qty" value="1" min="1" max="50">
+                                <button class="qty-btn" onclick="increaseQty('mango-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Fresh Mangoes', 60, 'mango-qty', '🥭')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 11: Coconut -->
+                <div class="product-detail-card" data-category="fruits">
+                    <div class="product-image">🥥</div>
+                    <div class="product-info">
+                        <h3>Fresh Coconuts</h3>
+                        <p class="product-category">Fruits</p>
+                        <p class="product-description">Fresh, mature coconuts. Perfect for cooking, coconut water, and making coconut milk. Healthy and nutritious.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Fresh</span>
+                            <span class="feature-badge">✓ Natural</span>
+                            <span class="feature-badge">✓ Healthy Fats</span>
+                        </div>
+                        <p class="product-price">₹35 <span>per piece</span></p>
+                        <div class="quantity-selector">
+                            <label for="coconut-qty">Quantity (pieces):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('coconut-qty')">-</button>
+                                <input type="number" id="coconut-qty" value="1" min="1" max="50">
+                                <button class="qty-btn" onclick="increaseQty('coconut-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Fresh Coconuts', 35, 'coconut-qty', '🥥', 'piece')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 12: Cow Milk -->
+                <div class="product-detail-card" data-category="dairy">
+                    <div class="product-image">🥛</div>
+                    <div class="product-info">
+                        <h3>Fresh Cow Milk</h3>
+                        <p class="product-category">Dairy Products</p>
+                        <p class="product-description">Pure, fresh cow milk from our farm. 100% natural, no additives. Rich in calcium and protein. Morning fresh delivery!</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Pure & Fresh</span>
+                            <span class="feature-badge">✓ No Additives</span>
+                            <span class="feature-badge">✓ Daily Fresh</span>
+                        </div>
+                        <p class="product-price">₹55 <span>per liter</span></p>
+                        <div class="quantity-selector">
+                            <label for="milk-qty">Quantity (liters):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('milk-qty')">-</button>
+                                <input type="number" id="milk-qty" value="1" min="1" max="20">
+                                <button class="qty-btn" onclick="increaseQty('milk-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Fresh Cow Milk', 55, 'milk-qty', '🥛', 'liter')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 13: Coconut Oil -->
+                <div class="product-detail-card" data-category="dairy">
+                    <div class="product-image">🛢️</div>
+                    <div class="product-info">
+                        <h3>Pure Coconut Oil</h3>
+                        <p class="product-category">Processed Products</p>
+                        <p class="product-description">Cold-pressed organic coconut oil. Made from fresh coconuts. Perfect for cooking, hair care, and skin care.</p>
+                        <div class="product-features">
+                            <span class="feature-badge">✓ Cold Pressed</span>
+                            <span class="feature-badge">✓ 100% Pure</span>
+                            <span class="feature-badge">✓ Multi-use</span>
+                        </div>
+                        <p class="product-price">₹180 <span>per liter</span></p>
+                        <div class="quantity-selector">
+                            <label for="oil-qty">Quantity (liters):</label>
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="decreaseQty('oil-qty')">-</button>
+                                <input type="number" id="oil-qty" value="1" min="1" max="20">
+                                <button class="qty-btn" onclick="increaseQty('oil-qty')">+</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Pure Coconut Oil', 180, 'oil-qty', '🛢️', 'liter')">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Delivery Info -->
+        <div class="section highlight-section">
+            <h2>🚚 Home Delivery Available</h2>
+            <div class="delivery-info">
+                <p>✓ <strong>Free delivery</strong> on orders above ₹500 within Chintamani</p>
+                <p>✓ <strong>Delivery Charges:</strong> ₹50 for orders below ₹500</p>
+                <p>✓ <strong>Delivery Areas:</strong> Chintamani and surrounding 25 km radius</p>
+                <p>✓ <strong>Delivery Time:</strong> Same day for orders before 12 PM, next day for later orders</p>
+                <p>✓ <strong>Fresh Guarantee:</strong> All produce harvested within 24 hours of delivery</p>
+            </div>
+            <a href="cart.html" class="button">View Cart & Checkout</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SHIVA SHANKAR G R - Indian Agriculture Network | Promoting Sustainable Farming</p>
+        <p>Chintamani, Karnataka | E-NAM Registered Farmer</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SHIVA SHANKAR G R</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌾 Jai Jawan Jai Kisan 🌾</h1>
+        <p>Digital Profile of an Indian Farmer</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="farm.html">My Farm</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="section">
+            <h1>Get in Touch</h1>
+            <p class="lead">Have questions about our products, farming practices, or want to place a bulk order? We'd love to hear from you!</p>
+        </div>
+
+        <div class="contact-container">
+            
+            <!-- Contact Information -->
+            <div class="contact-info-section">
+                <h2>Contact Information</h2>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+9110227715">+91 9110227715
+                            
+                        </a></p>
+                        <p class="contact-note">Available: 8:00 AM - 7:00 PM (Daily)</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p><a href="mailto:shivashankar.farmer@gmail.com">shivashankar.farmer@gmail.com</a></p>
+                        <p class="contact-note">We respond within 24 hours</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Farm Location</h3>
+                        <p>Village: Chintamani</p>
+                        <p>District: Chikkaballapur</p>
+                        <p>State: Karnataka, India</p>
+                        <p>Pincode: 563125</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-details">
+                        <h3>E-NAM Registration</h3>
+                        <p>Registered Seller on E-NAM Platform</p>
+                        <p>Organic Certification: NPOP Certified</p>
+                    </div>
+                </div>
+
+                <!-- Business Hours -->
+                <div class="business-hours">
+                    <h3>📅 Farm Visit Hours</h3>
+                    <table>
+                        <tr>
+                            <td>Monday - Saturday</td>
+                            <td>9:00 AM - 5:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>By Appointment Only</td>
+                        </tr>
+                    </table>
+                    <p class="note">Please call ahead to schedule farm visits</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2>Send us a Message</h2>
+                <form id="contact-form" onsubmit="submitContactForm(event)">
+                    
+                    <div class="form-group">
+                        <label for="inquiry-name">Your Name *</label>
+                        <input type="text" id="inquiry-name" name="inquiry-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry-email">Email Address *</label>
+                        <input type="email" id="inquiry-email" name="inquiry-email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry-phone">Phone Number *</label>
+                        <input type="tel" id="inquiry-phone" name="inquiry-phone" pattern="[0-9]{10}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry-type">Type of Inquiry *</label>
+                        <select id="inquiry-type" name="inquiry-type" required>
+                            <option value="">Select Inquiry Type</option>
+                            <option value="product">Product Inquiry</option>
+                            <option value="bulk">Bulk Order</option>
+                            <option value="farm-visit">Farm Visit Request</option>
+                            <option value="collaboration">Business Collaboration</option>
+                            <option value="general">General Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry-message">Your Message *</label>
+                        <textarea id="inquiry-message" name="inquiry-message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+
+                    <button type="submit" class="button">Send Message</button>
+                </form>
+
+                <div id="form-success" class="form-message success" style="display: none;">
+                    ✓ Thank you! Your message has been sent. We'll get back to you soon.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Map Section -->
+        <div class="section">
+            <h2>Find Our Farm</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <p>📍 Chintamani, Chikkaballapur District, Karnataka</p>
+                    <p>Approximately 75 km from Bangalore</p>
+                    <p class="map-note">For exact directions, please contact us via phone</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                
+                <div class="faq-item">
+                    <h3>Q: Do you offer home delivery?</h3>
+                    <p>A: Yes! We offer home delivery within Chintamani and a 25 km radius. Free delivery is available for orders above ₹500.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: How fresh are your products?</h3>
+                    <p>A: All our produce is harvested within 24 hours of delivery. We ensure maximum freshness and nutrition.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: Are your products certified organic?</h3>
+                    <p>A: Yes, our farm is NPOP certified organic. We follow strict organic farming protocols and never use chemical pesticides or fertilizers.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: Do you accept bulk orders?</h3>
+                    <p>A: Absolutely! We welcome bulk orders for restaurants, hotels, and institutions. Please contact us directly for special pricing and arrangements.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: Can I visit your farm?</h3>
+                    <p>A: Yes, farm visits are welcome! We encourage people to see our farming practices firsthand. Please call ahead to schedule your visit.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: What payment methods do you accept?</h3>
+                    <p>A: We accept Cash on Delivery, UPI payments, and bank transfers. Choose your preferred method during checkout.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SHIVA SHANKAR G R - Indian Agriculture Network | Promoting Sustainable Farming</p>
+        <p>Chintamani, Karnataka | E-NAM Registered Farmer</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+
+</body>
+</html>

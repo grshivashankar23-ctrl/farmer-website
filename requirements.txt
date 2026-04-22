@@ -1,0 +1,20 @@
+# Install with: pip install -r requirements.txt
+# ============================================
+
+# Web Framework
+Flask==3.0.0
+
+# Database
+Flask-SQLAlchemy==3.1.1
+
+# Password Hashing
+Flask-Bcrypt==1.0.1
+
+# CORS Support
+Flask-CORS==4.0.0
+
+# Environment Variables
+python-dotenv==1.0.0
+
+# Development Server
+Werkzeug==3.0.1

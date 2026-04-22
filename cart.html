@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - SHIVA SHANKAR G R</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌾 Jai Jawan Jai Kisan 🌾</h1>
+        <p>Digital Profile of an Indian Farmer</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="farm.html">My Farm</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html" class="cart-link active">🛒 Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="section">
+            <h1>Your Shopping Cart</h1>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="cart-container">
+            <div class="cart-items-section">
+                <div id="cart-items">
+                    <!-- Cart items will be populated by JavaScript -->
+                </div>
+                
+                <div id="empty-cart" class="empty-cart" style="display: none;">
+                    <div class="empty-cart-icon">🛒</div>
+                    <h3>Your cart is empty</h3>
+                    <p>Add some fresh organic products to get started!</p>
+                    <a href="products.html" class="button">Browse Products</a>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">₹0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Charges:</span>
+                    <span id="delivery-charges">₹0.00</span>
+                </div>
+                <div class="summary-note">
+                    <small>Free delivery on orders above ₹500</small>
+                </div>
+                <div class="summary-row total">
+                    <span><strong>Total:</strong></span>
+                    <span id="total"><strong>₹0.00</strong></span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+                <a href="products.html" class="continue-shopping">← Continue Shopping</a>
+            </div>
+        </div>
+
+        <!-- Checkout Form (Hidden Initially) -->
+        <div id="checkout-section" class="checkout-section" style="display: none;">
+            <div class="section">
+                <h2>Delivery Information</h2>
+                <form id="checkout-form" onsubmit="placeOrder(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customer-name">Full Name *</label>
+                            <input type="text" id="customer-name" name="customer-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-phone">Phone Number *</label>
+                            <input type="tel" id="customer-phone" name="customer-phone" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-email">Email Address</label>
+                        <input type="email" id="customer-email" name="customer-email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delivery-address">Delivery Address *</label>
+                        <textarea id="delivery-address" name="delivery-address" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" value="Chintamani" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pincode *</label>
+                            <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delivery-instructions">Delivery Instructions (Optional)</label>
+                        <textarea id="delivery-instructions" name="delivery-instructions" rows="2" placeholder="Any specific instructions for delivery..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment-method">Payment Method *</label>
+                        <select id="payment-method" name="payment-method" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="cod">Cash on Delivery</option>
+                            <option value="upi">UPI Payment</option>
+                            <option value="bank">Bank Transfer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="button-secondary" onclick="hideCheckout()">Back to Cart</button>
+                        <button type="submit" class="button">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Order Confirmation (Hidden Initially) -->
+        <div id="order-confirmation" class="order-confirmation" style="display: none;">
+            <div class="confirmation-content">
+                <div class="confirmation-icon">✓</div>
+                <h2>Order Placed Successfully!</h2>
+                <p>Thank you for your order. We will contact you shortly to confirm the delivery details.</p>
+                <div class="order-details">
+                    <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+                    <p><strong>Total Amount:</strong> <span id="order-total"></span></p>
+                    <p><strong>Delivery Address:</strong> <span id="order-address"></span></p>
+                </div>
+                <p class="confirmation-note">You will receive a confirmation call within 2 hours.</p>
+                <div class="confirmation-actions">
+                    <a href="products.html" class="button">Continue Shopping</a>
+                    <a href="index.html" class="button-secondary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SHIVA SHANKAR G R - Indian Agriculture Network | Promoting Sustainable Farming</p>
+        <p>Chintamani, Karnataka | E-NAM Registered Farmer</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+
+</body>
+</html>
